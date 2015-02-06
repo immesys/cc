@@ -1,6 +1,6 @@
 
 
-A = dofile "lib/abspos.lua"
+A = dofile "cc/lib/abspos.lua"
 function sqr(x)
     A.push()
     A.goto(x,0,0)
