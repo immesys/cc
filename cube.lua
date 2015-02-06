@@ -1,13 +1,13 @@
 
+u = dofile "cc/lib/util.lua"
 
-A = dofile "cc/lib/abspos.lua"
 function sqr(x)
-    A.push()
-    A.goto(x,0,0)
-    A.goto(x,x,0)
-    A.goto(0,x,0)
-    A.goto(0,0,0)
-    A.pop()
+    u.push()
+    u.goto(x,0,0)
+    u.goto(x,x,0)
+    u.goto(0,x,0)
+    u.goto(0,0,0)
+    u.pop()
 end
 
 sqr(5)

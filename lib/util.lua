@@ -66,6 +66,25 @@ mod.goto = function(x, y, z)
     end
 end
 
+mod.try_down = function()
+    local s = turtle.down()
+    if not s then
+        s = turtle.digDown()
+        if not s then
+            return false
+        end
+        s = turtle.down()
+        if s then
+            mod.z = mod.z - 1
+            return true
+        else
+            return false
+        end
+    end
+    mod.z = mod.z - 1
+    return true
+end
+
 mod.push = function()
     table.insert(mod.stack, {mod.x, mod.y, mod.z} )
     mod.x = 0
@@ -77,4 +96,5 @@ mod.pop = function()
    mod.x, mod.y, mod.z = unpack(table.remove(mod.stack))
 end
 
+mod.place()
 return mod
