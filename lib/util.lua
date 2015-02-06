@@ -96,5 +96,4 @@ mod.pop = function()
    mod.x, mod.y, mod.z = unpack(table.remove(mod.stack))
 end
 
-mod.place()
 return mod
