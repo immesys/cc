@@ -37,6 +37,14 @@ function refuel_all()
     end-- if it's valid fuel
 end
 
+function emptyleft()
+    turtle.turnLeft()
+    for i=1,16 do
+       turtle.select(i)
+       turtle.drop()
+    end
+    turtle.turnRight()
+end
 function grid(width, height)
     u.push()
     for w=1,width do
@@ -47,9 +55,11 @@ function grid(width, height)
                 u.goto(0,0,0)
                 return
             end
-            goto(w*4, h*4, 0)
+            goto(w*3, h*3, 0)
             shaft(100)
         end
+        goto(0,0,0)
+        emptyLeft()
     end
     u.goto(0,0,0)
     u.pop()
