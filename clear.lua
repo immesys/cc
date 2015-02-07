@@ -10,7 +10,7 @@ end
 
 function slice(w, h)
   for col=1,w do
-    fow row=1,h do
+    for row=1,h do
       while not turtle.forward() do
         turtle.dig()
       end
