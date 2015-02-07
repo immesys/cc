@@ -55,7 +55,7 @@ function grid(width, height)
                 u.goto(0,0,0)
                 return
             end
-            goto(w*3, h*3, 0)
+            goto(w*3+h, h*3, 0)
             shaft(100)
         end
         goto(0,0,0)
