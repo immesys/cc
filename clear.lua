@@ -1,7 +1,10 @@
+pz=20
+pw=18
+ph=18
 function vslice(z,w,h)
   for i=1,z do
     slice(w,h)
-    turtle.up()
+    while not turtle.up() do turtle.digUp() end
   end
   for i=1,z do
     turtle.down()
