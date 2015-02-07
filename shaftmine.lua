@@ -1,4 +1,4 @@
-gw=5
+gw=10
 gh=5
 
 u = dofile "cc/lib/util.lua"
@@ -6,6 +6,7 @@ u = dofile "cc/lib/util.lua"
 function interesting(name)
     if name == "minecraft:stone" then return false end
     if name == "minecraft:dirt" then return false end
+    if name == "minecraft:cobblestone" then return false end
     return true
 end
 
@@ -55,10 +56,10 @@ function grid(width, height)
                 u.goto(0,0,0)
                 return
             end
-            goto(w*3+h, h*3, 0)
+            u.goto(w*3+(h%1), h*2, 0)
             shaft(100)
         end
-        goto(0,0,0)
+        u.goto(0,0,0)
         emptyLeft()
     end
     u.goto(0,0,0)
